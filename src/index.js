@@ -98,12 +98,76 @@
 // // console.log(message3);
 
 // // const [name, age] = myprofile;
-// // const message4 = `名前は${name}です。年齢は${age}です`;
-// // console.log(message4)
+// // // const message4 = `名前は${name}です。年齢は${age}です`;
+// // // console.log(message4)
+
+// // /**
+// //  *デフォルト値　引数など
+// //  */
+
+// // const sayHello = (name = "ゲスト") => console.log(`こんにちは${name}さん!`);
+// // sayHello("たま");
 
 // /**
-//  *デフォルト値　引数など
+//  * スプレッド構文
 //  */
 
-// const sayHello = (name = "ゲスト") => console.log(`こんにちは${name}さん!`);
-// sayHello("たま");
+//  // 配列の展開
+// const arr1 = [1,2];
+// //  console.log(arr1);
+// //  console.log(...arr1);
+
+// // const sumFunc = (num1, num2) => console.log(num1 + num2);
+// // sumFunc(arr1[0], arr1[1]);
+// // sumFunc(...arr1);
+
+// //まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3);
+
+// //はいれつのコピー、結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+
+// const arr6 = [...arr4];
+// arr[0] = 100;
+// console.log(arr6);
+
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+
+/**
+ *mapやfilter を使った配列の処理
+ */
+const nameArr = ["田中", "山", "たま"];
+
+nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+
+// for (let index = 0; index < nameArr. length; index++){
+//   console.log(nameArr[index]);
+// }
+
+// const nameArr2 = nameArr.map((name)=>{
+//   return name;
+// })
+// console.log(nameArr2)
+
+// nameArr.mapmap(name) => console.log((name));
+
+// const numArr = [1, 2, 3, 4, 5]
+// const newnumArr = numArr.filter((num) => {
+//   return num % 2 === 1;
+// });
+// console.log(newnumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "たま") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
